@@ -1,8 +1,8 @@
 settings:
   title: 'Status Page'
-  url: 'https://status-page.eidam.dev' # used for Slack messages
+  url: 'https://status.mlsub.net' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
-  daysInHistogram: 90 # number of days you want to display in histogram
+  daysInHistogram: 30 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
   allmonitorsOperational: 'All Systems Operational'
@@ -15,25 +15,59 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
+  - id: mlsub-net # unique identifier
+    name: 梦蓝发布站
+    description: 'Home page' # default=empty
+    url: 'https://mlsub.net/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
-
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
-    method: GET
-    expectStatus: 200
     linkable: true # allows the title to be a link, default=true
 
-  - id: blog-cloudflare-com
-    name: The Cloudflare Blog
-    url: 'https://blog.cloudflare.com/'
+  - id: wx-api-backend
+    name: 微信 API
+    description: ''
+    url: 'https://api.suisuichan.net/wechat.php?vid=wxv_1546636550262882305'
     method: GET
     expectStatus: 200
+    linkable: false # allows the title to be a link, default=true
+    
+  - id: weibo-api-backend
+    name: 微博 API
+    description: ''
+    url: 'https://api.suisuichan.net/weibo/?id=1034:4690428122038301'
+    method: GET
+    expectStatus: 200
+    linkable: false # allows the title to be a link, default=true
+
+  - id: mlsub-api-backend
+    name: 网站视频分发 API
+    description: ''
+    url: 'https://get-video-5e7a46119f31e7f5.02f0d4456bc85.workers.dev?get=675'
+    method: GET
+    expectStatus: 302
+    linkable: false # allows the title to be a link, default=true
+    
+  - id: centurylink-api-backend
+    name: OneDrive API
+    description: ''
+    url: 'https://od.mlsub.net/v/1.mp4'
+    method: GET
+    expectStatus: 302
+    linkable: false # allows the title to be a link, default=true
+    
+  - id: gd-api-backend
+    name: Google Drive API
+    description: ''
+    url: 'https://share.02f0d4456bc85.workers.dev/test/669-av1-medium.mp4'
+    method: GET
+    expectStatus: 200
+    linkable: false # allows the title to be a link, default=true
+    
+  - id: fallback-source
+    name: 备用视频源
+    description: ''
+    url: 'https://v.mlsub.net/1.mp4'
+    method: GET
+    expectStatus: 200
+    linkable: false # allows the title to be a link, default=true
