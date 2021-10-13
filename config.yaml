@@ -39,14 +39,6 @@ monitors:
     method: GET
     expectStatus: 200
     linkable: false # allows the title to be a link, default=true
-
-  - id: mlsub-api-backend
-    name: 网站视频分发 API
-    description: ''
-    url: 'https://get-video-5e7a46119f31e7f5.02f0d4456bc85.workers.dev/?get=G417'
-    method: GET
-    expectStatus: 302
-    linkable: false # allows the title to be a link, default=true
     
   - id: centurylink-api-backend
     name: OneDrive API
@@ -54,14 +46,6 @@ monitors:
     url: 'https://od.mlsub.net/v/1.mp4'
     method: GET
     expectStatus: 302
-    linkable: false # allows the title to be a link, default=true
-    
-  - id: gd-api-backend
-    name: Google Drive API
-    description: ''
-    url: 'http://share.mlsub.net/test/669-av1-medium.mp4'
-    method: GET
-    expectStatus: 200
     linkable: false # allows the title to be a link, default=true
     
   - id: fallback-source
