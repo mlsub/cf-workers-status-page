@@ -55,3 +55,12 @@ monitors:
     method: GET
     expectStatus: 200
     linkable: false # allows the title to be a link, default=true
+    
+  - id: fallback-source1
+    name: 备用视频源1
+    description: ''
+    url: 'https://cdn.mlsub.net/1000.mp4'
+    method: GET
+    expectStatus: 200
+    linkable: false # allows the title to be a link, default=true
+
